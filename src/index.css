@@ -92,3 +92,11 @@ section {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+#notistack-snackbar {
+  color: white !important;
+}
+
+#notistack-snackbar svg path {
+  fill: white;
+}

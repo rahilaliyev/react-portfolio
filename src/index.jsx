@@ -6,6 +6,7 @@ import App from './app.jsx';
 
 import './index.css';
 
+import { SnackbarProvider } from 'notistack';
 import { Provider } from 'react-redux';
 
 function initialize() {
@@ -13,7 +14,14 @@ function initialize() {
 
   root.render(
     <Provider store={store}>
-      <App />
+      <SnackbarProvider
+        anchorOrigin={{
+          vertical: 'top',
+          horizontal: 'center',
+        }}
+      >
+        <App />
+      </SnackbarProvider>
     </Provider>,
   );
 }

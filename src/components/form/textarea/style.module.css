@@ -10,3 +10,9 @@ textarea {
   outline: none;
   margin-bottom: 16px;
 }
+
+.error {
+  display: block;
+  color: red;
+  margin-bottom: 10px;
+}

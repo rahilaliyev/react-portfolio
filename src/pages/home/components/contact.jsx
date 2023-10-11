@@ -2,10 +2,29 @@ import React from 'react';
 
 import styles from '../style.module.css';
 
-import { Envelope, Facebook, Geo, Instagram, Linkedin,Phone } from 'src/assets/images/icons';
+import { Envelope, Facebook, Geo, Instagram, Linkedin, Phone } from 'src/assets/images/icons';
 import { Input, SocialIcons, Textarea } from 'src/components';
+import { useDispatch } from 'react-redux';
+import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import { CONTACT_SCHEMA } from 'src/contants/schema';
+import { addForm } from 'src/redux/reducers/contactFormReducer';
+import { enqueueSnackbar } from 'notistack';
 
 export const Contact = () => {
+  const dispatch = useDispatch();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm({ resolver: yupResolver(CONTACT_SCHEMA) });
+
+  const _onSubmit = values => {
+    dispatch(addForm(values));
+    reset();
+    enqueueSnackbar('Your message was sent successfully', { variant: 'success' });
+  };
   return (
     <section className={styles.contact}>
       <div className="container">
@@ -15,10 +34,26 @@ export const Contact = () => {
               <h5 className={styles.text_header}>Send Message Us</h5>
             </div>
             <div>
-              <form>
-                <Input placeholder="Your Name" name="name" />
-                <Input placeholder="Your Email" name="email" type="email" />
-                <Textarea placeholder="Message" name="message" />
+              <form onSubmit={handleSubmit(_onSubmit)}>
+                <Input
+                  register={register}
+                  placeholder="Your Name"
+                  name="name"
+                  error={errors?.name?.message}
+                />
+                <Input
+                  register={register}
+                  placeholder="Your Email"
+                  name="email"
+                  type="email"
+                  error={errors?.email?.message}
+                />
+                <Textarea
+                  register={register}
+                  placeholder="Message"
+                  name="message"
+                  error={errors?.message?.message}
+                />
 
                 <div className={styles.submit_button}>
                   <button type="submit">Send Message</button>

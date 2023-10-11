@@ -119,7 +119,6 @@ p {
   gap: 30px 20px;
 }
 
-
 .see_more {
   margin-top: 30px;
   display: flex;
@@ -155,19 +154,6 @@ p {
 
 .form_group {
   margin-bottom: 16px;
-}
-
-.contact input,
-.contact textarea {
-  border-radius: 0;
-  box-shadow: none;
-  font-size: 14px;
-  line-height: 1.5;
-  width: 100%;
-  padding: 10px 15px;
-  border: 1px solid #dee2e6;
-  resize: none;
-  outline: none;
 }
 
 .submit_button {

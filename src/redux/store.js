@@ -1,3 +1,4 @@
+import contactFormReducer from './reducers/contactFormReducer';
 import projectsReducer from './reducers/projectsReducer';
 
 import { configureStore } from '@reduxjs/toolkit';
@@ -5,5 +6,6 @@ import { configureStore } from '@reduxjs/toolkit';
 export const store = configureStore({
   reducer: {
     projects: projectsReducer,
+    contactForm: contactFormReducer,
   },
 });
