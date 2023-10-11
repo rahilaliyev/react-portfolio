@@ -2,7 +2,7 @@ import React from 'react';
 
 import styles from '../style.module.css';
 
-import { Envelope, Geo, Phone, Facebook, Instagram, Linkedin } from 'src/assets/images/icons';
+import { Envelope, Facebook, Geo, Instagram, Linkedin,Phone } from 'src/assets/images/icons';
 import { Input, SocialIcons, Textarea } from 'src/components';
 
 export const Contact = () => {
