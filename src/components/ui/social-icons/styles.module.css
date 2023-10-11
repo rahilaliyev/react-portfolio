@@ -1,0 +1,15 @@
+.anchor {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  box-shadow: 0 0 0 3px #0078ff;
+  transition: 0.5s;
+  border-radius: 50%;
+  background: transparent;
+}
+
+.anchor:hover {
+  background-color: #0078ff;
+}

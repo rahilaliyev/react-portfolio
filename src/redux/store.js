@@ -1,0 +1,9 @@
+import projectsReducer from './reducers/projectsReducer';
+
+import { configureStore } from '@reduxjs/toolkit';
+
+export const store = configureStore({
+  reducer: {
+    projects: projectsReducer,
+  },
+});
